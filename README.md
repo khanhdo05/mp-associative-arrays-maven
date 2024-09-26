@@ -1,7 +1,8 @@
-Associative Arrays
-==================
+# Mini-Project 4: Associative arrays
 
-Starter code for a CSC-207 project on associative arrays.
+## Student
 
-_Students must replace the contents of this file with appropriate
-contents, including class, author, date, and URL._
+- Name: Khanh Do
+- Class: CSC-207-02
+- Fork URL: <https://github.com/khanhdo05/mp-associative-arrays-maven> 
+- Original repo: <https://github.com/Grinnell-CSC207/mp-associative-arrays-maven>
