@@ -106,14 +106,20 @@ public class AssociativeArray<K, V> {
       } // if
     } // for
 
-    throw new KeyNotFoundException("Key not found in the array: " + key);
+    throw new KeyNotFoundException();
   } // get(K)
 
   /**
    * Determine if key appears in the associative array. Should return false for the null key.
    */
   public boolean hasKey(K key) {
-    return false; // STUB
+    for (int i = 0; i < this.size; i++) {
+      if (this.pairs[i].key.equals(key)) {
+        return true;
+      } // if
+    } // for
+
+    return false;
   } // hasKey(K)
 
   /**
