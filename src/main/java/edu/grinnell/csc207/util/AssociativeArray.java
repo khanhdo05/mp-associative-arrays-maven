@@ -85,7 +85,22 @@ public class AssociativeArray<K, V> {
    * @throws NullKeyException If the client provides a null key.
    */
   public void set(K key, V value) throws NullKeyException {
+    if (key == null) {
+      throw new NullKeyException();
+    } // if
 
+    if (this.hasKey(key)) {
+      for (int i = 0; i < this.size; i++) {
+        if (this.pairs[i].key.equals(key)) {
+          this.pairs[i].val = value;
+        } // if
+      } // for
+    } else {
+      if (this.size == this.pairs.length) {
+        this.expand();
+      } // if
+      this.pairs[this.size] = new KVPair<>(key, value);
+    } // if
   } // set(K,V)
 
   /**
