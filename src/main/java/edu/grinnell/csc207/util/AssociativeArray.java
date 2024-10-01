@@ -60,7 +60,15 @@ public class AssociativeArray<K, V> {
    * @return a new copy of the array
    */
   public AssociativeArray<K, V> clone() {
-    return null; // STUB
+    AssociativeArray<K, V> copy = new AssociativeArray<>();
+    copy.size = this.size;
+
+    // Manually make a deep copy of the array.
+    for (int i = 0; i < this.size; i++) {
+      copy.pairs[i] = this.pairs[i];
+    } // for
+
+    return copy;
   } // clone()
 
   /**
@@ -89,13 +97,18 @@ public class AssociativeArray<K, V> {
       throw new NullKeyException();
     } // if
 
+    // If the key already exists, update the value.
     if (this.hasKey(key)) {
       for (int i = 0; i < this.size; i++) {
         if (this.pairs[i].key.equals(key)) {
           this.pairs[i].val = value;
         } // if
       } // for
-    } else {
+    }
+
+    // Otherwise, add a new key/value pair.
+    else {
+      // If the array is full, expand it.
       if (this.size == this.pairs.length) {
         this.expand();
       } // if
