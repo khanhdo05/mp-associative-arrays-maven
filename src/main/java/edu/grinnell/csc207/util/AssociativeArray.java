@@ -34,7 +34,7 @@ public class AssociativeArray<K, V> {
   /**
    * The array of key/value pairs.
    */
-  KVPair<K, V> pairs[];
+  KVPair<K, V>[] pairs;
 
   // +--------------+------------------------------------------------
   // | Constructors |
@@ -122,9 +122,7 @@ public class AssociativeArray<K, V> {
           this.pairs[i].val = value;
         } // if
       } // for
-    } // if
-    // Otherwise, add a new key/value pair.
-    else {
+    } else {
       // If the array is full, expand it.
       if (this.size == this.pairs.length) {
         this.expand();
