@@ -24,8 +24,8 @@ public class AAExperiments {
    * @param key The key to set.
    * @param val The value to set.
    */
-  public static void set(PrintWriter pen, AssociativeArray<String, String> aa, String key,
-      String val) {
+  public static void set(PrintWriter pen, AssociativeArray<String, String> aa,
+      String key, String val) {
     pen.printf("set(\"%s\", \"%s\") -> ", key, val);
     try {
       aa.set(key, val);
@@ -58,7 +58,8 @@ public class AAExperiments {
    * @param aa The associative array.
    * @param key The key.
    */
-  public static void hasKey(PrintWriter pen, AssociativeArray<String, String> aa, String key) {
+  public static void hasKey(PrintWriter pen,
+      AssociativeArray<String, String> aa, String key) {
     pen.printf("hasKey(\"%s\") -> ", key);
     try {
       pen.println(aa.hasKey(key));
